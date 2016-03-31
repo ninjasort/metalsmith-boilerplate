@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "An opinionated boilerplate for using Metalsmith.",
   "main": "dist",
-  "directories": {
-    "test": "test"
-  },
   "babel": {
     "presets": [
       "es2015"
