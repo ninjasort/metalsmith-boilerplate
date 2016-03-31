@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head %}
+
+  <body>
+
+    <section class="blog">
+      <div class="container">
+        <div class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1">
+          <ul class="post-list">
+
+            {% for post in pagination.files %}
+              <li> {{ post.title }} </li>
+            {% endfor %}
+
+            <nav>
+              <ul class="pager">
+                
+                <!-- Previous -->
+                <li class="previous">
+                  {% if pagination.previous %}
+                  <a href="/blog/{{pagination.num | minus:1}}">
+                    <span aria-hidden="true">&larr;</span>
+                  </a>
+                  {% endif %}
+                </li>
+                
+                <!-- TODO: Create helper for this -->
+                {% assign mod = pagination.index | modulo:5 %}
+                {% assign diff = pagination.index | minus:mod %}
+                {% assign end = diff | plus:4 %}
+                {% for index in (diff..end) %}
+                  {% assign page = pagination.pages | get:index %}
+                  <li>
+                    <a class="{% if pagination.num == page.pagination.num %}active{% endif %}" href="/{{ page.path }}">
+                      {{ page.pagination.num }}
+                    </a>
+                  </li>
+                {% endfor %}
+                
+                <!-- Next -->
+                <li class="next">
+                  {% if pagination.next %}
+                  <a href="/blog/{{pagination.num | plus:1 }}">
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  {% endif %}
+                </li>
+
+              </ul>
+            </nav>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    {% include scripts %}
+
+  </body>
+
+</html>

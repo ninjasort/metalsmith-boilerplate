@@ -1,0 +1,47 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if title %}{{ site.title }} - {{ title }}{% else %}{{ site.title }}{% endif %}</title>
+  
+  <meta name="description" content="{% if excerpt %}{{ excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  
+  {% if tags %}
+    <meta name="keywords" content="{{ tags | join: ', ' }}">
+  {% else %}
+    <meta name="keywords" content="{{ site.keywords | join: ', ' }}">
+  {% endif %}
+
+  {% if site.owner.twitter %}
+    <!-- Twitter Cards -->
+    {% if image.feature %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ site.url }}/assets/img/{{ image.feature }}">
+    {% else %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="{% if image.thumb %}{{ site.url }}/assets/img/{{ image.thumb }}{% else %}{{ site.url }}/img/{{ site.logo }}{% endif %}">
+    {% endif %}
+    <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:creator" content="@{{ site.owner.twitter }}">
+  {% endif %}
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ env.staging.url }}/{{ path }}">
+  <meta property="og:image" content="{% if meta_image %}{{ env.staging.url }}/assets/img/{{ meta_image }}{% else %}{{ env.staging.url }}/assets/img/{{ site.meta_image }}{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  {% assign page = title | downcase %}
+  {% if page == 'blog' %}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/rss.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  {% endif %}
+
+</head>

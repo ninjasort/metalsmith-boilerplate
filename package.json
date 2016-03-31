@@ -1,0 +1,102 @@
+{
+  "name": "metalsmith-boilerplate",
+  "version": "0.1.0",
+  "description": "An opinionated boilerplate for using Metalsmith.",
+  "main": "dist",
+  "directories": {
+    "test": "test"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "deploy-prod": "gulp deploy -p",
+    "deploy": "gulp deploy",
+    "start": "gulp watch",
+    "dist": "gulp dist",
+    "test": "babel-node ./node_modules/.bin/karma start",
+    "test:watch": "gulp test:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvnq/metalsmith-boilerplate.git"
+  },
+  "author": "Cameron J Roe <cameronjroe@gmail.com> (http://cameronjroe.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calvnq/metalsmith-boilerplate/issues"
+  },
+  "homepage": "https://github.com/calvnq/metalsmith-boilerplate#readme",
+  "dependencies": {
+    "metalsmith": "2.1.0",
+    "metalsmith-autoprefixer": "1.1.0",
+    "metalsmith-collections": "0.7.0",
+    "metalsmith-define": "2.0.0",
+    "metalsmith-excerpts": "1.1.0",
+    "metalsmith-fingerprint": "1.0.3",
+    "metalsmith-html-minifier": "2.0.0",
+    "metalsmith-ignore": "0.1.2",
+    "metalsmith-imagemin": "1.2.0",
+    "metalsmith-in-place": "1.4.3",
+    "metalsmith-jekyll-dates": "0.0.5",
+    "metalsmith-layouts": "1.6.4",
+    "metalsmith-markdown": "0.2.1",
+    "metalsmith-metadata": "0.0.4",
+    "metalsmith-pagination": "1.4.0",
+    "metalsmith-permalinks": "0.5.0",
+    "metalsmith-rss": "1.0.0",
+    "metalsmith-sass": "1.3.0",
+    "metalsmith-sitemap": "1.0.0",
+    "metalsmith-webpack": "1.0.3",
+    "moment": "2.12.0",
+    "picturefill": "3.0.2",
+    "tinyliquid": "0.2.31"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babel-cli": "6.6.5",
+    "babel-core": "^6.1.2",
+    "babel-istanbul": "0.7.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.1.2",
+    "browser-sync": "^2.11.1",
+    "chai": "3.5.0",
+    "cz-conventional-changelog": "1.1.5",
+    "file-loader": "^0.8.5",
+    "gulp": "^3.9.0",
+    "gulp-s3": "^0.3.0",
+    "imports-loader": "^0.6.5",
+    "isparta": "4.0.0",
+    "isparta-loader": "2.0.0",
+    "jasmine-core": "2.4.1",
+    "jasmine-jquery": "2.1.1",
+    "karma": "0.13.22",
+    "karma-babel-preprocessor": "6.0.1",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "0.2.3",
+    "karma-coverage": "github:douglasduteil/karma-coverage#next",
+    "karma-html2js-preprocessor": "0.1.0",
+    "karma-jasmine": "0.3.8",
+    "karma-jasmine-jquery": "0.1.1",
+    "karma-jquery": "0.1.0",
+    "karma-mocha": "0.2.2",
+    "karma-sinon": "1.0.4",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-spec-reporter": "0.0.25",
+    "karma-webpack": "1.7.0",
+    "mocha-loader": "0.7.1",
+    "raw-loader": "^0.5.1",
+    "script-loader": "^0.6.1",
+    "sinon": "1.17.3",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "1.14.1",
+    "yargs": "4.3.2"
+  }
+}

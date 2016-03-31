@@ -1,0 +1,9 @@
+dev:
+  baseurl:          ""
+  url:              http://localhost:3000
+staging:
+  baseurl:          ""
+  url:              http://
+prod:
+  baseurl:          ""
+  url:              s3://prod_url

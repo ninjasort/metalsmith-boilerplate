@@ -1,0 +1,12 @@
+_site
+node_modules
+.DS_Store
+.sass-cache
+*.sublime-project
+*.sublime-workspace
+npm-debug.log
+tmp
+design
+dist
+coverage
+tmp
